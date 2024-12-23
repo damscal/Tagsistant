@@ -23,7 +23,7 @@
 /**
  * Triple tag operators
  */
-enum {
+typedef enum {
 	TAGSISTANT_NONE,
 	TAGSISTANT_EQUAL_TO,
 	TAGSISTANT_CONTAINS,
