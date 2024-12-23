@@ -50,6 +50,9 @@ int tagsistant_open(const char *path, struct fuse_file_info *fi)
 	else if (QTREE_POINTS_TO_OBJECT(qtree)) {
 		if (tagsistant_is_tags_list_file(qtree)) {
 			res = open(tagsistant.tags, fi->flags);
+			if(res isNot -1) {
+				tagsistant_set_file_handle(fi, res);
+			}
 			tagsistant_errno = errno;
 			goto TAGSISTANT_EXIT_OPERATION;
 		}
